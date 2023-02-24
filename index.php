@@ -22,10 +22,10 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Pablo Garay - Web Developer" />
 	<meta property="og:description" content="Pablo Garay, web developer portfolio. You can also use this portfolio website to profile him, just download it from my github." />
-	<meta property="og:url" content="https://pablogarayok.github.io/" />
+	<meta property="og:url" content="https://pablogarayok/" />
 	<meta property="og:site_name" content="Pablo Garay Porfolio" />
-	<meta property="og:image" content="https://pablogarayok.github.io/img/web-site.png" />
-	<meta property="og:image:secure_url" content="https://pablogarayok.github.io/img/web-site.png" />
+	<meta property="og:image" content="https://pablogarayok/img/web-site.png" />
+	<meta property="og:image:secure_url" content="https://pablogarayok/img/web-site.png" />
 	<meta property="og:image:type" content="image/png" />
 	<meta property="og:image:width" content="296" />
 	<meta property="og:image:height" content="156" />
@@ -36,7 +36,7 @@
 	<meta name="twitter:title" content="Pablo Garay - Web Developer" />
 	<meta name="twitter:creator" content="@_pablogaray" />
 	<meta name="twitter:description" content="Pablo Garay, web developer portfolio. You can also use this portfolio website to profile him, just download it from my github." />
-	<meta name="twitter:image" content="https://pablogarayok.github.io/img/web-site.png" />
+	<meta name="twitter:image" content="https://pablogarayok/img/web-site.png" />
 </head>
 <body>
 	<header class="topheader">
@@ -242,20 +242,23 @@
 					<h2 class="uppercase">Contact</h2>
 					<div class="contact-divider"></div>
 				</div>
-				<form name="contact_form" id="contact_form" action="" method="post" onsubmit="return validar();">
+				<form name="contact_form" id="contact_form" action="php/contact-form.php" method="post" onsubmit="return validar();">
 					<div class="contact-group">
+						<?php
+                            include("php/feedback.php");
+                        ?>
 						<div class="contact-row">
-							<input type="text" name="name" id="name" placeholder="" value="" required="">
+							<input type="text" name="name" id="name" placeholder="" value="<?= $_GET['name'] ? $_GET['name'] : "" ?>" required="">
 							<span class="contact-line"></span>
 							<label>Name</label>
 						</div>
 						<div class="contact-row">
-							<input type="email" name="email" id="email" placeholder="" value="" required="">
+							<input type="email" name="email" id="email" placeholder="" value="<?= $_GET['email'] ? $_GET['email'] : "" ?>" required="">
 							<span class="contact-line"></span>
 							<label>E-mail</label>             
 						</div>
 						<div class="contact-row">    
-							<textarea name="message" id="message" rows="3" placeholder="" required=""></textarea>
+							<textarea name="message" id="message" rows="3" placeholder="" required=""><?= $_GET['message'] ? $_GET['message'] : "" ?></textarea>
 							<span class="contact-line"></span>
 							<label class="contact-message">Message</label>
 						</div>
@@ -286,8 +289,9 @@
 	</div><!--end main-->
 	<footer class="footer">
 		<div class="footer-credits">
-			<p class="footer-malvinas">40 <img src="./img/islas-malvinas.png" width="40" height="17" alt="islas malvinas"> Years.</p>
-			<p class="footer-autor"><i>&copy; 2023 · Powered by: <span class="footer-name">Pablo Garay</span> · C&oacute;rdoba, Argentina.</i></p>
+			<?php include_once "./php/malvinas.php";?>
+			<p class="footer-malvinas"><?= $conmemoracion; ?><img src="./img/islas-malvinas.png" width="40" height="17" alt="islas malvinas"> Years.</p>
+			<p class="footer-autor"><i>&copy; <?php echo date("Y");?> · Powered by: <span class="footer-name">Pablo Garay</span> · C&oacute;rdoba, Argentina.</i></p>
 		</div>
 	</footer>
 </body>
