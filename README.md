@@ -13,7 +13,7 @@
 * PHP
 ----
 Para ver la funcionalidad completa del sitio puede visitar: [portfolio-website](https://pablogaray.com.ar/portfolio/portfolio-website-v1) o clonar el repositorio y acceder al archivo: __index.php__ a través de un servidor local como ___LAMP___ o ___WAMP___.
-También será necesario editar la línea 84 del archivo: [app.js](https://PabloGarayOK.github.io/js/app.js) que fue agregada solamente para dar un simple feedback al usuario de GitHub Pages al hacer _click_ en: _"send message"_.
+También será necesario editar la línea 84 del archivo: [app.js](https://PabloGarayOK.github.io/js/app.js) que fue agregada solamente para dar un simple feedback al usuario de GitHub Pages al hacer _click_ en el botón _"send message"_ del formulario de contacto.
 
 #### js/app.js　
 
@@ -33,11 +33,11 @@ Para configurar el correo electrónico del destinatario hay que editar la línea
 
 	   // Capturamos los datos enviados por POST desde la pagina cotizaciones
 
-	   $to                  = 'hello@pablogaray.com.ar'; // <<<------ Modificar e-mail
+	   $to             = 'hello@pablogaray.com.ar'; // <<<------ Modificar e-mail
 	   $name           = $_POST["name"];
-	   $email            = $_POST["email"];
-	   $subject         = 'Consulta de la web Portfolio'; // <<<------ Modificar asunto
-	   $message      = $_POST["message"];
+	   $email          = $_POST["email"];
+	   $subject        = 'Consulta de la web Portfolio'; // <<<------ Modificar asunto
+	   $message        = $_POST["message"];
 	   
 	?>
 
