@@ -42,4 +42,4 @@ Para configurar el correo electrónico del destinatario hay que editar la línea
 	?>
 
 Finalmente podemos encontrar en el ___footer___ del archivo __index.php__ un pequeño _script de php_ en homenaje a los __Héroes de Malvinas__ que actualiza el año de manera automatica al igual que el _copyright_.
-####Fin.
+#### Fin.
