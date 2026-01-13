@@ -53,8 +53,7 @@ When running the project from **GitHub Pages**, the contact form cannot send ema
 
 For this reason, a temporary feedback alert was added for evaluation purposes.
 
-To remove it, edit line **84** of the following file:  
-`js/app.js`
+To remove it, edit line **84** of the following file: `js/app.js`
 
 ```javascript
 }else{
@@ -67,8 +66,7 @@ To remove it, edit line **84** of the following file:
 
 ## Email Configuration
 
-To configure the recipient email address, edit line 7 of the following file:
-`php/contact-form.php`
+To configure the recipient email address, edit line 7 of the following file: `php/contact-form.php`
 
 ```php
 $to = 'hello@pablogaray.com.ar'; // <<<------ Change email address
